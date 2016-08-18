@@ -13,9 +13,6 @@ $(document).ready(function() {
     var currentIndex = 0;
     var userInput = $("#inputNumber").val().split("");
 
-    //let's pretend that userInput = 12
-
-        // for (var index = 0; index <= userInput.length; index += 1) {
           if (userInput.length === 1) {
             var onesDigit = regularNumbers.indexOf(userInput[0]);
             $(".output").text(romanOnes[onesDigit]);
@@ -41,13 +38,20 @@ $(document).ready(function() {
           var onesDigit = regularNumbers.indexOf(userInput[3]);
           $(".output").text(romanThousands[thousandsDigit] + romanHundreds[hundredsDigit] + romanTens[tensDigit] + romanOnes[onesDigit]);
         }
+
+        else {
+          if (isNaN(userInput)) {
+            $(".output").text("Please enter a valid number!");
+          };
+        }
       });
+    });
 
 
 
 
     //
-    // console.log(userInput);
+    // THIS IS HOW WE WORKED THE ONE DIGIT INPUTS (VERSION2 ):******************
     //
     // regularNumbers.forEach(function(currentInteger) {
     //   	if (userInput === currentInteger) {
@@ -57,8 +61,8 @@ $(document).ready(function() {
     // var outputRoman = romanArray[currentIndex];
     // $(".output").text(outputRoman);
 
- });
 
+// THIS IS HOW WE WORKED THE ONE DIGIT INPUTS (VERSION 1):******************
 
 // var userInput = parseInt($("#inputNumber").val()); {
 //       if (isNaN(userInput)) {
@@ -96,45 +100,3 @@ $(document).ready(function() {
 //     }
 //
 //   };
-//
-//
-//     // alert(userInput);
-//
-//   });
-// });
-
-// if (isNaN(year)) {
-//        $(".determinalized").append(" not a numeric value. Please try again.")
-//      } else {
-//
-//        var yearOutput = leapYear(year);
-//
-//        $(".determinalized").empty();
-//
-//        $(".determinalized").append(yearOutput);
-//      }
-//    });
-//  });
-
-// back end logic
-//
-//  function leapYear(year) {
-//    if (year < -45) {
-//      return " earlier than when leap years were established.";
-//    } else if (year % 400 === 0) {
-//      return " indeed a leap year!";
-//    } else if (year % 100 === 0) {
-//      return " not a leap year.";
-//    } else if (year % 4 === 0) {
-//      return " indeed a leap year!";
-//    } else {
-//      return " not a leap year.";
-//    }
-//  };
-// Contact GitHub API Training Shop Blog About
-//
-//
-//   });
-// });
-
-// back end logic
