@@ -5,7 +5,28 @@ $(document).ready(function() {
     event.preventDefault();
 
 
-    var userInput = parseInt($("#inputNumber").val()); {
+
+
+  var romanArray = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+  var regularNumbers = ["1","2","3","4","5","6","7","8","9","10"];
+  var userInput = "8";
+  var currentIndex = 0;
+
+  regularNumbers.forEach(function(currentInteger) {
+    	if (userInput === currentInteger) {
+      currentIndex = regularNumbers.indexOf(currentInteger);
+      };
+    });
+   var outputRoman = romanArray[currentIndex];
+
+   console.log(outputRoman);
+
+	//for (index = 0; index <= 10; index += 1) {
+  	//romanArray[index]
+  }
+
+}
+var userInput = parseInt($("#inputNumber").val()); {
       if (isNaN(userInput)) {
       $(".output").text("Please Enter an actual valid number!");
     }
@@ -41,6 +62,7 @@ $(document).ready(function() {
     }
 
   };
+
 
     // alert(userInput);
 

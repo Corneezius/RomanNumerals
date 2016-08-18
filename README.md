@@ -57,6 +57,7 @@ Contact kyle@kylefisher.com, for more information.
 * _For an empty input, program returns an error message prompting to "enter a valid number"._
   * _Input Example: _
   * _Output Example: "Please enter a valid number"_
+* _
 
 
 * HTML
