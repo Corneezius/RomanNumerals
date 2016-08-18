@@ -17,8 +17,8 @@ $(document).ready(function() {
 
         // for (var index = 0; index <= userInput.length; index += 1) {
           if (userInput.length === 1) {
-            regularNumbers.includes(userInput[index]);
-            $(".output").text(romanOnes[userInput[index] - 1]);
+            var onesDigit = regularNumbers.indexOf(userInput[0]);
+            $(".output").text(romanOnes[onesDigit]);
           }
 
            else if (userInput.length === 2) {
@@ -28,16 +28,18 @@ $(document).ready(function() {
           }
 
           else if (userInput.length === 3) {
-           var hundredsDigits = regularNumbers.indexOf(userInput[0]);
+           var hundredsDigit = regularNumbers.indexOf(userInput[0]);
            var tensDigit = regularNumbers.indexOf(userInput[1]);
            var onesDigit = regularNumbers.indexOf(userInput[2]);
-           $(".output").text(romanHundreds[hundredsDigits] + romanTens[tensDigit] + romanOnes[onesDigit]);
+           $(".output").text(romanHundreds[hundredsDigit] + romanTens[tensDigit] + romanOnes[onesDigit]);
          }
 
-         else if (userInput.length === 2) {
-          var tensDigit = regularNumbers.indexOf(userInput[0]);
-          var onesDigit = regularNumbers.indexOf(userInput[1]);
-          $(".output").text(romanTens[tensDigit] + romanOnes[onesDigit]);
+         else if (userInput.length === 4) {
+          var thousandsDigit = regularNumbers.indexOf(userInput[0]);
+          var hundredsDigit = regularNumbers.indexOf(userInput[1]);
+          var tensDigit = regularNumbers.indexOf(userInput[2]);
+          var onesDigit = regularNumbers.indexOf(userInput[3]);
+          $(".output").text(romanThousands[thousandsDigit] + romanHundreds[hundredsDigit] + romanTens[tensDigit] + romanOnes[onesDigit]);
         }
       });
 
