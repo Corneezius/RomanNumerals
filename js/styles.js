@@ -7,8 +7,35 @@ $(document).ready(function() {
     var userInput = parseInt($("#inputNumber").val()); {
       if (userInput === 1) {
       $(".output").text("I");
-    
-    };
+    }
+      else if (userInput === 2) {
+      $(".output").text("II");
+    }
+      else if (userInput === 3) {
+      $(".output").text("III");
+    }
+      else if (userInput === 4) {
+      $(".output").text("IV");
+    }
+      else if (userInput === 5) {
+      $(".output").text("V");
+    }
+      else if (userInput === 6) {
+      $(".output").text("VI");
+    }
+      else if (userInput === 7) {
+      $(".output").text("VII");
+    }
+      else if (userInput === 8) {
+      $(".output").text("VIII");
+    }
+      else if (userInput === 9) {
+      $(".output").text("IX");
+    }
+      else if (userInput === 10) {
+      $(".output").text("X");
+    }
+
   };
 
     // alert(userInput);
