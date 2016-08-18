@@ -7,67 +7,83 @@ $(document).ready(function() {
 
 
 
-  var romanArray = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
-  var regularNumbers = ["1","2","3","4","5","6","7","8","9","10"];
-  var userInput = "8";
-  var currentIndex = 0;
+    var romanOnes = ["I","II","III","IV","V","VI","VII","VIII","IX"];
+    var romanTens = ["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
+    var romanHundreds = ["C","CC","CCC","CD","D","DX","DXX","DXXX","CM"];
+    var romanThousands = ["M","MM","MMM"];
+    var regularNumbers = ["1","2","3","4","5","6","7","8","9","10"];
 
-  regularNumbers.forEach(function(currentInteger) {
-    	if (userInput === currentInteger) {
-      currentIndex = regularNumbers.indexOf(currentInteger);
-      };
-    });
-   var outputRoman = romanArray[currentIndex];
+    var currentIndex = 0;
+    var userInput = $("#inputNumber").val().split("");
 
-   console.log(outputRoman);
+        for (var index = 0; index <= userInput.length; index += 1) {
+          if (userInput.length === 1) {
+            regularNumbers.includes(userInput[index]);
+            $(".output").text(romanOnes[userInput[index] - 1]);
+          else if (userInput.length === 2)
 
-	//for (index = 0; index <= 10; index += 1) {
-  	//romanArray[index]
-  }
-
-}
-var userInput = parseInt($("#inputNumber").val()); {
-      if (isNaN(userInput)) {
-      $(".output").text("Please Enter an actual valid number!");
-    }
-      else if (userInput === 1) {
-      $(".output").text("I");
-    }
-      else if (userInput === 2) {
-      $(".output").text("II");
-    }
-      else if (userInput === 3) {
-      $(".output").text("III");
-    }
-      else if (userInput === 4) {
-      $(".output").text("IV");
-    }
-      else if (userInput === 5) {
-      $(".output").text("V");
-    }
-      else if (userInput === 6) {
-      $(".output").text("VI");
-    }
-      else if (userInput === 7) {
-      $(".output").text("VII");
-    }
-      else if (userInput === 8) {
-      $(".output").text("VIII");
-    }
-      else if (userInput === 9) {
-      $(".output").text("IX");
-    }
-      else if (userInput === 10) {
-      $(".output").text("X");
-    }
-
-  };
+          }
+        }
 
 
-    // alert(userInput);
 
-  });
+
+    //
+    // console.log(userInput);
+    //
+    // regularNumbers.forEach(function(currentInteger) {
+    //   	if (userInput === currentInteger) {
+    //     currentIndex = regularNumbers.indexOf(currentInteger);
+    //     };
+    //   });
+    // var outputRoman = romanArray[currentIndex];
+    // $(".output").text(outputRoman);
+
+ });
+
 });
+// var userInput = parseInt($("#inputNumber").val()); {
+//       if (isNaN(userInput)) {
+//       $(".output").text("Please Enter an actual valid number!");
+//     }
+//       else if (userInput === 1) {
+//       $(".output").text("I");
+//     }
+//       else if (userInput === 2) {
+//       $(".output").text("II");
+//     }
+//       else if (userInput === 3) {
+//       $(".output").text("III");
+//     }
+//       else if (userInput === 4) {
+//       $(".output").text("IV");
+//     }
+//       else if (userInput === 5) {
+//       $(".output").text("V");
+//     }
+//       else if (userInput === 6) {
+//       $(".output").text("VI");
+//     }
+//       else if (userInput === 7) {
+//       $(".output").text("VII");
+//     }
+//       else if (userInput === 8) {
+//       $(".output").text("VIII");
+//     }
+//       else if (userInput === 9) {
+//       $(".output").text("IX");
+//     }
+//       else if (userInput === 10) {
+//       $(".output").text("X");
+//     }
+//
+//   };
+//
+//
+//     // alert(userInput);
+//
+//   });
+// });
 
 // if (isNaN(year)) {
 //        $(".determinalized").append(" not a numeric value. Please try again.")
