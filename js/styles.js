@@ -4,26 +4,42 @@ $(document).ready(function() {
   $("#inputForm").submit(function(event) {
     event.preventDefault();
 
-
-
-
     var romanOnes = ["I","II","III","IV","V","VI","VII","VIII","IX"];
     var romanTens = ["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
     var romanHundreds = ["C","CC","CCC","CD","D","DX","DXX","DXXX","CM"];
     var romanThousands = ["M","MM","MMM"];
-    var regularNumbers = ["1","2","3","4","5","6","7","8","9","10"];
+    var regularNumbers = ["1","2","3","4","5","6","7","8","9"];
 
     var currentIndex = 0;
     var userInput = $("#inputNumber").val().split("");
 
-        for (var index = 0; index <= userInput.length; index += 1) {
+    //let's pretend that userInput = 12
+
+        // for (var index = 0; index <= userInput.length; index += 1) {
           if (userInput.length === 1) {
             regularNumbers.includes(userInput[index]);
             $(".output").text(romanOnes[userInput[index] - 1]);
-          else if (userInput.length === 2)
-
           }
+
+           else if (userInput.length === 2) {
+            var tensDigit = regularNumbers.indexOf(userInput[0]);
+            var onesDigit = regularNumbers.indexOf(userInput[1]);
+            $(".output").text(romanTens[tensDigit] + romanOnes[onesDigit]);
+          }
+
+          else if (userInput.length === 3) {
+           var hundredsDigits = regularNumbers.indexOf(userInput[0]);
+           var tensDigit = regularNumbers.indexOf(userInput[1]);
+           var onesDigit = regularNumbers.indexOf(userInput[2]);
+           $(".output").text(romanHundreds[hundredsDigits] + romanTens[tensDigit] + romanOnes[onesDigit]);
+         }
+
+         else if (userInput.length === 2) {
+          var tensDigit = regularNumbers.indexOf(userInput[0]);
+          var onesDigit = regularNumbers.indexOf(userInput[1]);
+          $(".output").text(romanTens[tensDigit] + romanOnes[onesDigit]);
         }
+      });
 
 
 
@@ -41,7 +57,7 @@ $(document).ready(function() {
 
  });
 
-});
+
 // var userInput = parseInt($("#inputNumber").val()); {
 //       if (isNaN(userInput)) {
 //       $(".output").text("Please Enter an actual valid number!");
