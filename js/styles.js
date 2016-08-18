@@ -4,8 +4,12 @@ $(document).ready(function() {
   $("#inputForm").submit(function(event) {
     event.preventDefault();
 
+
     var userInput = parseInt($("#inputNumber").val()); {
-      if (userInput === 1) {
+      if (isNaN(userInput)) {
+      $(".output").text("Please Enter an actual valid number!");
+    }
+      else if (userInput === 1) {
       $(".output").text("I");
     }
       else if (userInput === 2) {
